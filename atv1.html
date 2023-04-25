@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let listaNumeros = [];
+        function numeroJaEstaNaLista(lista, numero) {
+        return lista.indexOf(numero) !== -1;}
+        while (listaNumeros.length < 64) {
+        let numero = Math.floor(Math.random() * 64);
+        if (!numeroJaEstaNaLista(listaNumeros, numero)) {
+        listaNumeros.push(numero);
+        }}
+
+        listaNumeros.sort(function(a, b) {
+            return a - b
+            
+       
+        });
+        let matriz = [];
+    for (let i = 0; i < 8; i++) {
+    let linha = [];
+    for (let j = 0; j < 8; j++) {
+    linha.push(listaNumeros[i * 8 + j]);
+  }
+  matriz.push(linha);
+}
+
+console.log(matriz);
+
+    </script>
+</body>
+</html>
